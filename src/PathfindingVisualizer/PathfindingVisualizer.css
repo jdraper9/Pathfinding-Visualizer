@@ -1,3 +1,7 @@
 .grid {
-  margin: 100px 0 0;
+  margin: 20px;
+}
+
+.custom-class {
+  margin-top: 25px !important;
 }
