@@ -4,6 +4,7 @@ import Node from './Node/Node';
 // import algorithm code, and after algorithm runs return shortest path
 import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 import { astar } from '../algorithms/astar';
+import { dfs } from '../algorithms/dfs';
 
 import './PathfindingVisualizer.css';
 
@@ -103,8 +104,12 @@ export default class PathfindingVisualizer extends Component {
     this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
-  visualizeDStar() {
-    return null;
+  visualizeDFS() {
+    const { grid } = this.state;
+    const startNode = grid[START_NODE_ROW][START_NODE_COL];
+    const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
+    const visitedNodesInOrder = dfs(grid, startNode, finishNode);
+    console.log(visitedNodesInOrder);
   }
 
   selectA() {
@@ -115,8 +120,8 @@ export default class PathfindingVisualizer extends Component {
     this.setState({ selectedAlgorithm: 'dijkstra' });
   }
 
-  selectD() {
-    this.setState({ selectedAlgorithm: 'D*' });
+  selectDFS() {
+    this.setState({ selectedAlgorithm: 'DFS' });
   }
 
   runSelected() {
@@ -126,8 +131,8 @@ export default class PathfindingVisualizer extends Component {
         this.visualizeDijkstra();
       } else if (selectedAlgorithm === 'A*') {
         this.visualizeAStar();
-      } else if (selectedAlgorithm === 'D*') {
-        this.visualizeDStar();
+      } else if (selectedAlgorithm === 'DFS') {
+        this.visualizeDFS();
       }
     }
     this.setState({ algoHasRun: true });
@@ -161,8 +166,8 @@ export default class PathfindingVisualizer extends Component {
             <button className="item" onClick={() => this.selectDijkstra()}>
               Dijkstra's
             </button>
-            <button className="item" onClick={() => this.selectD()}>
-              D*
+            <button className="item" onClick={() => this.selectDFS()}>
+              DFS
             </button>
           </div>
         </div>

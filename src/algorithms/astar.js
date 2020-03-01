@@ -1,5 +1,3 @@
-// astar is just Dijkstra with heuristic
-
 export function astar(grid, startNode, endNode) {
   // do I need this, or do I used openList?
   const visitedNodesInOrder = [];
@@ -19,14 +17,15 @@ export function astar(grid, startNode, endNode) {
     // Take from the open list current_node with lowest f value
     sortNodesByF(openList);
     const current_node = openList.shift();
-    console.log('current: ');
-    console.log(current_node);
-    visitedNodesInOrder.push(current_node);
     if (current_node.isWall) {
       continue;
     }
     // stuck case
-    if (current_node.g === Infinity);
+    if (current_node.g === Infinity) {
+      continue;
+    }
+    // for visualization
+    visitedNodesInOrder.push(current_node);
     // success case, current_node is endNode
     if (current_node === endNode) {
       return visitedNodesInOrder;
