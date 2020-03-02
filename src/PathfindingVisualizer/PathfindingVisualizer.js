@@ -54,7 +54,7 @@ export default class PathfindingVisualizer extends Component {
 
   //  -----------
 
-  animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder) {
+  animate(visitedNodesInOrder, nodesInShortestPathOrder) {
     for (let i = 0; i <= visitedNodesInOrder.length; i++) {
       // if last node visited by path, animate shortest path
       if (i === visitedNodesInOrder.length) {
@@ -92,7 +92,7 @@ export default class PathfindingVisualizer extends Component {
     // return shortest path
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
     //
-    this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
+    this.animate(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
   visualizeAStar() {
@@ -101,7 +101,7 @@ export default class PathfindingVisualizer extends Component {
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
     const visitedNodesInOrder = astar(grid, startNode, finishNode);
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
-    this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
+    this.animate(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
   visualizeDFS() {
@@ -109,7 +109,8 @@ export default class PathfindingVisualizer extends Component {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
     const visitedNodesInOrder = dfs(grid, startNode, finishNode);
-    console.log(visitedNodesInOrder);
+    const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
+    this.animate(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
   selectA() {
