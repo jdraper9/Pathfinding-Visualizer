@@ -5,6 +5,7 @@ import Node from './Node/Node';
 import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 import { astar } from '../algorithms/astar';
 import { dfs } from '../algorithms/dfs';
+import Info from './components/info';
 
 import './PathfindingVisualizer.css';
 
@@ -156,7 +157,6 @@ export default class PathfindingVisualizer extends Component {
             ></i>
             <div className="content">
               Pathfinding Algorithm Visualizer
-              <div className="sub header">select an algorithm</div>
               <div className="sub header">click and drag to create walls</div>
             </div>
           </h2>
@@ -170,6 +170,9 @@ export default class PathfindingVisualizer extends Component {
             <button className="item" onClick={() => this.selectDFS()}>
               DFS
             </button>
+          </div>
+          <div>
+            <Info alg={this.state.selectedAlgorithm}></Info>
           </div>
         </div>
         {/*  --- grid --- */}
