@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/jdraper9/deploy-pathfinder/static/css/main.6b44beb8.chunk.css",
-    "main.js": "/jdraper9/deploy-pathfinder/static/js/main.3ce6fd29.chunk.js",
-    "main.js.map": "/jdraper9/deploy-pathfinder/static/js/main.3ce6fd29.chunk.js.map",
-    "runtime-main.js": "/jdraper9/deploy-pathfinder/static/js/runtime-main.35d96e96.js",
-    "runtime-main.js.map": "/jdraper9/deploy-pathfinder/static/js/runtime-main.35d96e96.js.map",
-    "static/js/2.b489eee3.chunk.js": "/jdraper9/deploy-pathfinder/static/js/2.b489eee3.chunk.js",
-    "static/js/2.b489eee3.chunk.js.map": "/jdraper9/deploy-pathfinder/static/js/2.b489eee3.chunk.js.map",
-    "index.html": "/jdraper9/deploy-pathfinder/index.html",
-    "precache-manifest.52ef058f4938aadaa3d4a1237e2f099d.js": "/jdraper9/deploy-pathfinder/precache-manifest.52ef058f4938aadaa3d4a1237e2f099d.js",
-    "service-worker.js": "/jdraper9/deploy-pathfinder/service-worker.js",
-    "static/css/main.6b44beb8.chunk.css.map": "/jdraper9/deploy-pathfinder/static/css/main.6b44beb8.chunk.css.map",
-    "static/js/2.b489eee3.chunk.js.LICENSE.txt": "/jdraper9/deploy-pathfinder/static/js/2.b489eee3.chunk.js.LICENSE.txt"
+    "main.css": "/jdraper9/Pathfinding-Visualizer/static/css/main.6b44beb8.chunk.css",
+    "main.js": "/jdraper9/Pathfinding-Visualizer/static/js/main.7c3512ec.chunk.js",
+    "main.js.map": "/jdraper9/Pathfinding-Visualizer/static/js/main.7c3512ec.chunk.js.map",
+    "runtime-main.js": "/jdraper9/Pathfinding-Visualizer/static/js/runtime-main.4fe4686f.js",
+    "runtime-main.js.map": "/jdraper9/Pathfinding-Visualizer/static/js/runtime-main.4fe4686f.js.map",
+    "static/js/2.b489eee3.chunk.js": "/jdraper9/Pathfinding-Visualizer/static/js/2.b489eee3.chunk.js",
+    "static/js/2.b489eee3.chunk.js.map": "/jdraper9/Pathfinding-Visualizer/static/js/2.b489eee3.chunk.js.map",
+    "index.html": "/jdraper9/Pathfinding-Visualizer/index.html",
+    "precache-manifest.5fc54399396450bc13b7a99c4dc0201e.js": "/jdraper9/Pathfinding-Visualizer/precache-manifest.5fc54399396450bc13b7a99c4dc0201e.js",
+    "service-worker.js": "/jdraper9/Pathfinding-Visualizer/service-worker.js",
+    "static/css/main.6b44beb8.chunk.css.map": "/jdraper9/Pathfinding-Visualizer/static/css/main.6b44beb8.chunk.css.map",
+    "static/js/2.b489eee3.chunk.js.LICENSE.txt": "/jdraper9/Pathfinding-Visualizer/static/js/2.b489eee3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.35d96e96.js",
+    "static/js/runtime-main.4fe4686f.js",
     "static/js/2.b489eee3.chunk.js",
     "static/css/main.6b44beb8.chunk.css",
-    "static/js/main.3ce6fd29.chunk.js"
+    "static/js/main.7c3512ec.chunk.js"
   ]
 }
