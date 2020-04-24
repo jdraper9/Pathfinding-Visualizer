@@ -10,10 +10,10 @@ import Info from './components/info';
 import './PathfindingVisualizer.css';
 
 // constants initializing start and end position
-const START_NODE_ROW = 10;
-const START_NODE_COL = 15;
-const FINISH_NODE_ROW = 10;
-const FINISH_NODE_COL = 35;
+const START_NODE_ROW = 8;
+const START_NODE_COL = 12;
+const FINISH_NODE_ROW = 8;
+const FINISH_NODE_COL = 34;
 
 export default class PathfindingVisualizer extends Component {
   constructor() {
@@ -22,7 +22,7 @@ export default class PathfindingVisualizer extends Component {
       grid: [],
       mouseIsPressed: false,
       selectedAlgorithm: null,
-      algoHasRun: false
+      algoHasRun: false,
     };
   }
 
@@ -157,21 +157,27 @@ export default class PathfindingVisualizer extends Component {
             ></i>
             <div className="content">
               Pathfinding Algorithm Visualizer
-              <div className="sub header">click and drag to create walls</div>
+              <div className="sub header">Find the shortest path!</div>
             </div>
           </h2>
-          <div className="ui three item menu">
-            <button className="item" onClick={() => this.selectA()}>
+          <div className="ui buttons">
+            <button className="large ui button" onClick={() => this.selectA()}>
               A*
             </button>
-            <button className="item" onClick={() => this.selectDijkstra()}>
+            <button
+              className="large ui button"
+              onClick={() => this.selectDijkstra()}
+            >
               Dijkstra's
             </button>
-            <button className="item" onClick={() => this.selectDFS()}>
+            <button
+              className="large ui button"
+              onClick={() => this.selectDFS()}
+            >
               DFS
             </button>
           </div>
-          <div>
+          <div className="info-container">
             <Info alg={this.state.selectedAlgorithm}></Info>
           </div>
         </div>
@@ -213,9 +219,9 @@ export default class PathfindingVisualizer extends Component {
 // called when component mounts. Creates first grid
 const getInitialGrid = () => {
   const grid = [];
-  for (let row = 0; row < 20; row++) {
+  for (let row = 0; row < 17; row++) {
     const currentRow = [];
-    for (let col = 0; col < 50; col++) {
+    for (let col = 0; col < 46; col++) {
       // create a node at x_11 .... x_1_50 and push it into currentRow.
       currentRow.push(createNode(col, row));
     }
@@ -240,7 +246,7 @@ const createNode = (col, row) => {
     // a* properties
     g: Infinity,
     h: Infinity,
-    f: Infinity
+    f: Infinity,
   };
 };
 
@@ -254,7 +260,7 @@ const getNewGridWithWallToggled = (grid, row, col) => {
   const newNode = {
     ...node,
     // !node.isWall -> node.isWall = true
-    isWall: !node.isWall
+    isWall: !node.isWall,
   };
   // update node at position to newNode within new Grid object
   newGrid[row][col] = newNode;
