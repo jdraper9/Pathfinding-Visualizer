@@ -1,7 +1,22 @@
 .grid {
   margin: 20px;
+  margin-top: 26px;
 }
 
 .custom-class {
   margin-top: 25px !important;
+  width: 50%;
+}
+
+.spaghetti {
+  width: 70% !important;
+  text-align: center !important;
+}
+
+.info-container {
+  margin-top: 12px;
+  padding: 10px;
+  height: 8vh;
+  border: 1px solid lightgray;
+  border-radius: 15px;
 }

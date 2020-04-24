@@ -5,14 +5,15 @@ import Node from './Node/Node';
 import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
 import { astar } from '../algorithms/astar';
 import { dfs } from '../algorithms/dfs';
+import Info from './components/info';
 
 import './PathfindingVisualizer.css';
 
 // constants initializing start and end position
-const START_NODE_ROW = 10;
-const START_NODE_COL = 15;
-const FINISH_NODE_ROW = 10;
-const FINISH_NODE_COL = 35;
+const START_NODE_ROW = 8;
+const START_NODE_COL = 12;
+const FINISH_NODE_ROW = 8;
+const FINISH_NODE_COL = 34;
 
 export default class PathfindingVisualizer extends Component {
   constructor() {
@@ -21,7 +22,7 @@ export default class PathfindingVisualizer extends Component {
       grid: [],
       mouseIsPressed: false,
       selectedAlgorithm: null,
-      algoHasRun: false
+      algoHasRun: false,
     };
   }
 
@@ -54,7 +55,7 @@ export default class PathfindingVisualizer extends Component {
 
   //  -----------
 
-  animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder) {
+  animate(visitedNodesInOrder, nodesInShortestPathOrder) {
     for (let i = 0; i <= visitedNodesInOrder.length; i++) {
       // if last node visited by path, animate shortest path
       if (i === visitedNodesInOrder.length) {
@@ -92,7 +93,7 @@ export default class PathfindingVisualizer extends Component {
     // return shortest path
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
     //
-    this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
+    this.animate(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
   visualizeAStar() {
@@ -101,7 +102,7 @@ export default class PathfindingVisualizer extends Component {
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
     const visitedNodesInOrder = astar(grid, startNode, finishNode);
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
-    this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
+    this.animate(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
   visualizeDFS() {
@@ -109,7 +110,8 @@ export default class PathfindingVisualizer extends Component {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
     const visitedNodesInOrder = dfs(grid, startNode, finishNode);
-    console.log(visitedNodesInOrder);
+    const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
+    this.animate(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
   selectA() {
@@ -155,20 +157,28 @@ export default class PathfindingVisualizer extends Component {
             ></i>
             <div className="content">
               Pathfinding Algorithm Visualizer
-              <div className="sub header">select an algorithm</div>
-              <div className="sub header">click and drag to create walls</div>
+              <div className="sub header">Find the shortest path!</div>
             </div>
           </h2>
-          <div className="ui three item menu">
-            <button className="item" onClick={() => this.selectA()}>
+          <div className="ui buttons">
+            <button className="large ui button" onClick={() => this.selectA()}>
               A*
             </button>
-            <button className="item" onClick={() => this.selectDijkstra()}>
+            <button
+              className="large ui button"
+              onClick={() => this.selectDijkstra()}
+            >
               Dijkstra's
             </button>
-            <button className="item" onClick={() => this.selectDFS()}>
+            <button
+              className="large ui button"
+              onClick={() => this.selectDFS()}
+            >
               DFS
             </button>
+          </div>
+          <div className="info-container">
+            <Info alg={this.state.selectedAlgorithm}></Info>
           </div>
         </div>
         {/*  --- grid --- */}
@@ -209,9 +219,9 @@ export default class PathfindingVisualizer extends Component {
 // called when component mounts. Creates first grid
 const getInitialGrid = () => {
   const grid = [];
-  for (let row = 0; row < 20; row++) {
+  for (let row = 0; row < 17; row++) {
     const currentRow = [];
-    for (let col = 0; col < 50; col++) {
+    for (let col = 0; col < 46; col++) {
       // create a node at x_11 .... x_1_50 and push it into currentRow.
       currentRow.push(createNode(col, row));
     }
@@ -236,7 +246,7 @@ const createNode = (col, row) => {
     // a* properties
     g: Infinity,
     h: Infinity,
-    f: Infinity
+    f: Infinity,
   };
 };
 
@@ -250,7 +260,7 @@ const getNewGridWithWallToggled = (grid, row, col) => {
   const newNode = {
     ...node,
     // !node.isWall -> node.isWall = true
-    isWall: !node.isWall
+    isWall: !node.isWall,
   };
   // update node at position to newNode within new Grid object
   newGrid[row][col] = newNode;

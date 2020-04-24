@@ -1,5 +1,4 @@
 export function astar(grid, startNode, endNode) {
-  // do I need this, or do I used openList?
   const visitedNodesInOrder = [];
   const openList = [];
   const closedList = [];
