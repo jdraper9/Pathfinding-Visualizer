@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/Pathfinding-Visualizer/static/css/main.6b44beb8.chunk.css",
-    "main.js": "/react-gh-pages/Pathfinding-Visualizer/static/js/main.91b67538.chunk.js",
-    "main.js.map": "/react-gh-pages/Pathfinding-Visualizer/static/js/main.91b67538.chunk.js.map",
-    "runtime-main.js": "/react-gh-pages/Pathfinding-Visualizer/static/js/runtime-main.22b92352.js",
-    "runtime-main.js.map": "/react-gh-pages/Pathfinding-Visualizer/static/js/runtime-main.22b92352.js.map",
-    "static/js/2.b489eee3.chunk.js": "/react-gh-pages/Pathfinding-Visualizer/static/js/2.b489eee3.chunk.js",
-    "static/js/2.b489eee3.chunk.js.map": "/react-gh-pages/Pathfinding-Visualizer/static/js/2.b489eee3.chunk.js.map",
-    "index.html": "/react-gh-pages/Pathfinding-Visualizer/index.html",
-    "precache-manifest.e0457cdfbfa031b65f66750ab9639d25.js": "/react-gh-pages/Pathfinding-Visualizer/precache-manifest.e0457cdfbfa031b65f66750ab9639d25.js",
-    "service-worker.js": "/react-gh-pages/Pathfinding-Visualizer/service-worker.js",
-    "static/css/main.6b44beb8.chunk.css.map": "/react-gh-pages/Pathfinding-Visualizer/static/css/main.6b44beb8.chunk.css.map",
-    "static/js/2.b489eee3.chunk.js.LICENSE.txt": "/react-gh-pages/Pathfinding-Visualizer/static/js/2.b489eee3.chunk.js.LICENSE.txt"
+    "main.css": "/Pathfinding-Visualizer/static/css/main.6b44beb8.chunk.css",
+    "main.js": "/Pathfinding-Visualizer/static/js/main.a9799a1f.chunk.js",
+    "main.js.map": "/Pathfinding-Visualizer/static/js/main.a9799a1f.chunk.js.map",
+    "runtime-main.js": "/Pathfinding-Visualizer/static/js/runtime-main.efa78345.js",
+    "runtime-main.js.map": "/Pathfinding-Visualizer/static/js/runtime-main.efa78345.js.map",
+    "static/js/2.b489eee3.chunk.js": "/Pathfinding-Visualizer/static/js/2.b489eee3.chunk.js",
+    "static/js/2.b489eee3.chunk.js.map": "/Pathfinding-Visualizer/static/js/2.b489eee3.chunk.js.map",
+    "index.html": "/Pathfinding-Visualizer/index.html",
+    "precache-manifest.c793dfd1c8aa698936c890f9f485fe03.js": "/Pathfinding-Visualizer/precache-manifest.c793dfd1c8aa698936c890f9f485fe03.js",
+    "service-worker.js": "/Pathfinding-Visualizer/service-worker.js",
+    "static/css/main.6b44beb8.chunk.css.map": "/Pathfinding-Visualizer/static/css/main.6b44beb8.chunk.css.map",
+    "static/js/2.b489eee3.chunk.js.LICENSE.txt": "/Pathfinding-Visualizer/static/js/2.b489eee3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.22b92352.js",
+    "static/js/runtime-main.efa78345.js",
     "static/js/2.b489eee3.chunk.js",
     "static/css/main.6b44beb8.chunk.css",
-    "static/js/main.91b67538.chunk.js"
+    "static/js/main.a9799a1f.chunk.js"
   ]
 }
